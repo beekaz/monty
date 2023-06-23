@@ -1,58 +1,48 @@
 #include "monty.h"
+
+#include "monty.h"
+
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
- * main - monty code entry point
- *
- * Return: 0
- */
-
-
-int main(void)
+* main - monty code interpreter
+* @argc: number of arguments
+* @argv: monty file location
+* Return: 0 on success
+*/
+int main(int argc, char *argv[])
 {
-    char *opcode;
-    int value, line_number = 1;
-    size_t bufsize = 0;
-    char *line = NULL;
-    ssize_t linelen;
+	char *content;
+	FILE *file;
+	size_t size = 0;
+	ssize_t read_line = 1;
+	stack_t *stack = NULL;
+	unsigned int counter = 0;
 
-    while ((linelen = getline(&line, &bufsize, stdin)) != -1)
-    {
-        opcode = strtok(line, " \n\t\r");
-        if (opcode == NULL || *opcode == '#')
-        {
-            line_number++;
-            continue;
-        }
-
-        if (strcmp(opcode, "push") == 0)
-        {
-            char *arg = strtok(NULL, " \n\t\r");
-            if (arg == NULL)
-            {
-                fprintf(stderr, "L%d: usage: push integer\n", line_number);
-                exit(EXIT_FAILURE);
-            }
-
-            value = atoi(arg);
-	    push(&stack, value);
-        }
-        else if (strcmp(opcode, "pall") == 0)
-        {
-		pall(&stack);
-        }
-        else if (strcmp(opcode, "pint") == 0)
-        {
-		pint(&stack, line_number);
-        }
-        else
-        {
-            fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-            exit(EXIT_FAILURE);
-        }
-
-        line_number++;
-    }
-
-    free(line);
-    return 0;
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+	file = fopen(argv[1], "r");
+	bus.file = file;
+	if (!file)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	while (read_line > 0)
+	{
+		content = NULL;
+		read_line = getline(&content, &size, file);
+		bus.content = content;
+		counter++;
+		if (read_line > 0)
+		{
+			execute(content, &stack, counter, file);
+		}
+		free(content);
+	}
+	free_stack(stack);
+	fclose(file);
+	return (0);
 }
