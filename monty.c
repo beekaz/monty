@@ -1,4 +1,10 @@
 #include "monty.h"
+bus_t bus = {NULL, NULL, NULL, 0};
+/**
+ * main - monty code entry point
+ *
+ * Return: 0
+ */
 
 
 int main(void)
