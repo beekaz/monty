@@ -44,5 +44,7 @@ typedef struct instruction_s
 extern stack_t *top;
 
 void push(stack_t **head, unsigned int number);
+void pall(stack_t **head, unsigned int number);
+void pint(stack_t **head, unsigned int number);
 
 #endif
