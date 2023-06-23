@@ -49,6 +49,9 @@ void pint(stack_t **head, unsigned int number);
 void pop(stack_t **head, unsigned int counter);
 void swap(stack_t **head, unsigned int counter);
 void add(stack_t **head, unsigned int counter);
+void free_stack(stack_t *head)
+void addnode(stack_t **head, int n)
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 
 
 #endif
