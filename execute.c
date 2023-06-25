@@ -7,8 +7,7 @@
 * @content: line content
 * Return: no return
 */
-
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int  execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	char *opcode;
 	int value;
@@ -16,7 +15,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	opcode = strtok(content, " \t\n");
 	if (opcode == NULL || opcode[0] == '#')
 	{
-		return (0);
+		return 0;
 	}
 	if (strcmp(opcode, "push") == 0)
 	{
@@ -50,5 +49,5 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	return 0;
+	return -1;
 }
