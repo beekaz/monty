@@ -18,9 +18,9 @@ void push(stack_t **head, unsigned int counter)
 	 new_node->n = counter;
 	 new_node->next = *head;
 	 new_node->prev = NULL;
-	 if (*head != NUL)
+	 if (*head != NULL)
 	 {
 		 (*head)->prev = new_node;
-	 *head = new_node;
+		 *head = new_node;
 	 }
 }

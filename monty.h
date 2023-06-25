@@ -64,11 +64,11 @@ extern bus_t bus;
 
 
 
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 
 void push(stack_t **head, unsigned int number);
 void pall(stack_t **head, unsigned int number);
 void free_stack(stack_t *stack);
-void execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 bool is_numeric(const char *str);
 void pint(stack_t **head, unsigned int number);
 void pop(stack_t **head, unsigned int counter);
