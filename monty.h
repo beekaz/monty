@@ -70,6 +70,12 @@ void pall(stack_t **head, unsigned int number);
 void free_stack(stack_t *stack);
 void execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 bool is_numeric(const char *str);
+void pint(stack_t **head, unsigned int number);
+void pop(stack_t **head, unsigned int counter);
+void swap(stack_t **head, unsigned int counter);
+void add(stack_t **head, unsigned int counter);
+void sub(stack_t **head, unsigned int counter);
+void divide(stack_t **head, unsigned int counter);
 
 
 #endif
