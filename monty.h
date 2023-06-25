@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <sys/types.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -49,6 +50,7 @@ typedef struct instruction_s
  * @lifi: flag change stack <-> queue
  * Description: carries values through the program
  */
+/*typedef enum { false, true } bool;*/
 
 typedef struct bus_s
 {
@@ -65,13 +67,9 @@ extern bus_t bus;
 
 void push(stack_t **head, unsigned int number);
 void pall(stack_t **head, unsigned int number);
-void pint(stack_t **head, unsigned int number);
-void pop(stack_t **head, unsigned int counter);
-void swap(stack_t **head, unsigned int counter);
-void add(stack_t **head, unsigned int counter);
-void free_stack(stack_t *head)
-void addnode(stack_t **head, int n)
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+void free_stack(stack_t *stack);
+void execute(char *content, stack_t **head, unsigned int counter, FILE *file);
+bool is_numeric(const char *str);
 
 
 #endif

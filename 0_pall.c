@@ -7,7 +7,7 @@
  * Return: no return
 */
 
-void pall(stack_t **head, unsigned int number)
+void pall(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;
