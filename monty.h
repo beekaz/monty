@@ -67,7 +67,6 @@ void push(stack_t **head, unsigned int number);
 void pall(stack_t **head, unsigned int number);
 void free_stack(stack_t *head);
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-bool is_numeric(const char *str);
 void pint(stack_t **head, unsigned int number);
 void pop(stack_t **head, unsigned int counter);
 void swap(__attribute((unused)) stack_t **head, __attribute((unused)) unsigned int counter);
