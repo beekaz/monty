@@ -86,6 +86,7 @@ void pstr(__attribute((unused)) stack_t **stack, __attribute((unused)) unsigned 
 void rotl(__attribute((unused)) stack_t **stack, __attribute((unused)) unsigned int line_number);
 void rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
 void f_nop(stack_t **head, unsigned int counter);
-
+int digit(char number);
+int is_number(char *number);
 
 #endif
