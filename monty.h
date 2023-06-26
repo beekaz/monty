@@ -63,11 +63,10 @@ extern bus_t bus;
 
 
 
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-
 void push(stack_t **head, unsigned int number);
 void pall(stack_t **head, unsigned int number);
 void free_stack(stack_t *head);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 bool is_numeric(const char *str);
 void pint(stack_t **head, unsigned int number);
 void pop(stack_t **head, unsigned int counter);
@@ -86,7 +85,7 @@ void f_stack(stack_t **head, unsigned int counter);
 void pstr(__attribute((unused)) stack_t **stack, __attribute((unused)) unsigned int line_number);
 void rotl(__attribute((unused)) stack_t **stack, __attribute((unused)) unsigned int line_number);
 void rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
-
+void f_nop(stack_t **head, unsigned int counter);
 
 
 #endif
