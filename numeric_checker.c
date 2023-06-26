@@ -10,15 +10,17 @@
 bool is_numeric(const char *str)
 {
 	int i = 0;
+
 	if (str == NULL || *str == '\0')
 	{
 		return false;
 	}
+
 	if (str[0] == '-' || str[0] == '+')
 	{
 		i = 1;
 	}
-	
+
 	for (; str[i] != '\0'; i++)
 	{
 		if (str[i] < '0' || str[i] > '9')
@@ -26,6 +28,6 @@ bool is_numeric(const char *str)
 			return false;
 		}
 	}
-	
+
 	return true;
 }
