@@ -63,7 +63,6 @@ extern bus_t bus;
 
 
 
-
 int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 
 void push(stack_t **head, unsigned int number);
@@ -72,10 +71,22 @@ void free_stack(stack_t *head);
 bool is_numeric(const char *str);
 void pint(stack_t **head, unsigned int number);
 void pop(stack_t **head, unsigned int counter);
-void swap(stack_t **head, unsigned int counter);
+void swap(__attribute((unused)) stack_t **head, __attribute((unused)) unsigned int counter);
+void _print_number(int line_number);
 void add(stack_t **head, unsigned int counter);
 void sub(stack_t **head, unsigned int counter);
 void divide(stack_t **head, unsigned int counter);
+void mul(stack_t **head, unsigned int counter);
+void mod(stack_t **head, unsigned int counter);
+void pchar(__attribute((unused)) stack_t **stack, __attribute((unused)) unsigned int line_number);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void queue(stack_t **head, unsigned int counter);
+void f_stack(stack_t **head, unsigned int counter);
+void pstr(__attribute((unused)) stack_t **stack, __attribute((unused)) unsigned int line_number);
+void rotl(__attribute((unused)) stack_t **stack, __attribute((unused)) unsigned int line_number);
+void rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
+
 
 
 #endif
