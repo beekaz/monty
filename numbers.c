@@ -1,13 +1,10 @@
 #include "monty.h"
 
 /**
- * is_number - short description
- *
- * Description: long description
- *
- * @number: argument_1 description
- *
- * Return: return description
+ * is_number - checks if a given string represents a valid number.
+ * @number: argument_1, The string to be checked.
+ * Return: return 1 if the string represents a number,
+ * otherwise returns 0.
  */
 int is_number(char *number)
 {
@@ -30,7 +27,7 @@ int is_number(char *number)
 
 	while (number[index] != '\0')
 	{
-		if (!is_digit(number[index]))
+		if (!digit(number[index]))
 			return (0);
 		index++;
 	}
@@ -40,18 +37,13 @@ int is_number(char *number)
 
 
 
-#include "monty.h"
 
 /**
- * is_digit - short description
- *
- * Description: long description
- *
- * @number: argument_1 description
- *
- * Return: return description
+ * digit - checks if a given character is a digit (0-9).
+ * @number: argument_1, The character to be checked
+ * Return: return  1 if the character is a digit, otherwise returns 0.
  */
-int is_digit(char number)
+int digit(char number)
 {
 	return (number >= '0' && number <= '9');
 }
