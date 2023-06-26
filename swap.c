@@ -5,10 +5,12 @@
  * @counter: line_number
  * Return: no return
 */
-void swap(__attribute((unused)) stack_t **head, __attribute((unused)) unsigned int counter)
+void swap(__attribute((unused)) stack_t **head, 
+		__attribute((unused)) unsigned int counter)
 {
 	stack_t *h;
 	int len = 0, aux;
+
 	h = *head;
 	
 	while (h)
